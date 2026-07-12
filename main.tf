@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.notification_hubs : {
       for k2, v2 in coalesce(v1.notification_hub_authorization_rules, {}) :
       "${k1}/${k2}" => merge(v2, {
-        notification_hub_name = module.notification_hubs.notification_hubs["${k1}"].name
+        notification_hub_name = module.notification_hubs.notification_hubs_name["${k1}"]
       })
     }
   ]...)
