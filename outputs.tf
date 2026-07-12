@@ -1,4 +1,9 @@
 # --- azurerm_notification_hub ---
+output "notification_hubs_id" {
+  description = "Map of id values across all notification_hubs, keyed the same as var.notification_hubs"
+  value       = module.notification_hubs.notification_hubs_id
+}
+
 output "notification_hubs_apns_credential" {
   description = "Map of apns_credential values across all notification_hubs, keyed the same as var.notification_hubs"
   value       = module.notification_hubs.notification_hubs_apns_credential
@@ -43,6 +48,11 @@ output "notification_hubs_tags" {
 }
 
 # --- azurerm_notification_hub_authorization_rule ---
+output "notification_hub_authorization_rules_id" {
+  description = "Map of id values across all notification_hub_authorization_rules, keyed the same as var.notification_hub_authorization_rules"
+  value       = module.notification_hub_authorization_rules.notification_hub_authorization_rules_id
+}
+
 output "notification_hub_authorization_rules_listen" {
   description = "Map of listen values across all notification_hub_authorization_rules, keyed the same as var.notification_hub_authorization_rules"
   value       = module.notification_hub_authorization_rules.notification_hub_authorization_rules_listen
